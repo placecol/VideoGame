@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Riddley.VideoGame.Model
 {
@@ -6,6 +7,8 @@ namespace Riddley.VideoGame.Model
     {
         public string Id { get; set; }
 
-        public Collection<Player> Players { get; set; }
+        public List<Player> Players { get; set; }
+
+        public Board Board { get; set; }
     }
 }
