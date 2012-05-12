@@ -1,7 +1,7 @@
 obj
 bin
-Web/App_Data
-Web/App_Data/*
+App_Data
+App_Data/*
 deploy
 deploy/*
 _ReSharper.*
