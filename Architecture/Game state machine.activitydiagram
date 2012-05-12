@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="50a8e559-a06e-42a0-9ab5-0bb111f36b53" name="Game state machine" linkedPackageId="42e7f41e-f0d2-4432-acc6-12668f5ff64f" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a264e647-da93-46fd-bcef-df9788cef1a6">
+      <profileInstance Id="718018d2-cc75-4361-9ff7-8ab7cce27f03" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="bf2e5d1f-f3a9-4ae0-a123-f732a93d5287">
+      <profileInstance Id="6bbbcbbb-1662-4ab8-a3f6-b54181397876" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="7efc1d49-a1f9-4f38-9655-921e9f17bcde" name="Game state machine" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="8e8078eb-f76c-4032-bd5e-556f8b5313f4" />
+        <nodes>
+          <initialNode Id="c6c155e4-e419-4a45-8417-4890b761d649" name="Initial1" isLeaf="false">
+            <elementDefinition Id="739243fe-153f-4929-918d-87cab0f3fe96" />
+            <flowNodeTargets>
+              <controlFlow Id="6c733fc2-107b-442c-a434-a0ec46a5cdbd" isLeaf="false">
+                <opaqueActionMoniker Id="bf4e27e5-dadc-4022-8587-2faae8580530" LastKnownName="Setup Game" />
+                <elementDefinition Id="e62b9fce-feb2-4544-a005-4027bb8fafe5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="bf4e27e5-dadc-4022-8587-2faae8580530" name="Setup Game" isLeaf="false">
+            <elementDefinition Id="be2667ed-a873-4318-9911-b59460cf4fee" />
+            <flowNodeTargets>
+              <controlFlow Id="0eaa14ce-2df4-4b11-9b2f-a4f7a8eb0ba9" isLeaf="false">
+                <opaqueActionMoniker Id="92f4fb40-7805-4beb-839b-ac40fafb1901" LastKnownName="Next Round" />
+                <elementDefinition Id="2b4a98fa-ae87-4ae2-b03e-ccdf93784dae" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="92f4fb40-7805-4beb-839b-ac40fafb1901" name="Next Round" isLeaf="false">
+            <elementDefinition Id="34ced649-aa88-46b7-a699-7315731ed909" />
+            <flowNodeTargets>
+              <controlFlow Id="028a2cc0-aaca-4508-88e1-6bc6f6196f58" isLeaf="false">
+                <opaqueActionMoniker Id="ad1bf420-6426-4514-87bb-923649365cb9" LastKnownName="Next Player" />
+                <elementDefinition Id="7f713033-9a12-44c2-96b0-6e74955634ab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ad1bf420-6426-4514-87bb-923649365cb9" name="Next Player" isLeaf="false">
+            <elementDefinition Id="e010eb25-55e8-45aa-83b7-13797fcc02fc" />
+            <flowNodeTargets>
+              <controlFlow Id="9f6c3a94-9276-4ae1-a1a1-8d31ae509e96" isLeaf="false">
+                <opaqueActionMoniker Id="c36084aa-3297-4f09-a319-4d17988e6559" LastKnownName="Start Turn" />
+                <elementDefinition Id="cdac699a-ad02-41f8-8727-9a2d80b726be" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c36084aa-3297-4f09-a319-4d17988e6559" name="Start Turn" isLeaf="false">
+            <elementDefinition Id="4fe0cdc5-6f65-4592-ace7-2d72742d86d0" />
+            <flowNodeTargets>
+              <controlFlow Id="ebc1cd3c-096b-4561-aff4-2d037fc17e10" isLeaf="false">
+                <opaqueActionMoniker Id="8ff3c563-cf5e-4b65-a5aa-b5d45c78c827" LastKnownName="Get available player commands" />
+                <elementDefinition Id="48978195-f510-4af3-b93c-c4e6b1467bc7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="8ff3c563-cf5e-4b65-a5aa-b5d45c78c827" name="Get available player commands" isLeaf="false">
+            <elementDefinition Id="5c365490-6796-4f15-8497-014abc1611ab" />
+            <flowNodeTargets>
+              <controlFlow Id="90d02ef6-ae35-4526-a278-f4188ee18ea7" isLeaf="false">
+                <acceptEventActionMoniker Id="7e1c0430-b22a-43d4-bde4-0c91f6aea8e0" LastKnownName="Receive commands" />
+                <elementDefinition Id="4cfc65c1-e8f0-4cf1-b203-71f8fb5e823d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <acceptEventAction Id="7e1c0430-b22a-43d4-bde4-0c91f6aea8e0" name="Receive commands" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="d63f99f8-cb0d-4210-8b31-f93a501eeb43" />
+            <flowNodeTargets>
+              <controlFlow Id="093c7232-a70e-49f4-a1fb-f3e95e3a5ab1" isLeaf="false">
+                <decisionNodeMoniker Id="e4a3fa54-7bdc-43a4-a889-7ec0c4d9e319" LastKnownName="Decision3" />
+                <elementDefinition Id="25788bf4-47e0-481a-bf6a-e69f868705bf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <decisionNode Id="e4a3fa54-7bdc-43a4-a889-7ec0c4d9e319" name="Decision3" isLeaf="false">
+            <elementDefinition Id="03889986-ac34-42a3-a7c3-e5dab1ad3615" />
+            <flowNodeTargets>
+              <controlFlow Id="102abc52-a215-4a26-ac70-2377bf4e4ae1" guard="Invalid command" isLeaf="false">
+                <opaqueActionMoniker Id="8ff3c563-cf5e-4b65-a5aa-b5d45c78c827" LastKnownName="Get available player commands" />
+                <elementDefinition Id="7529db7e-9d9c-41ec-b341-723e6f73784a" />
+              </controlFlow>
+              <controlFlow Id="52e25e9b-971d-4e26-a820-9ff63750dd73" guard="Winner" isLeaf="false">
+                <activityFinalNodeMoniker Id="3bafa1b5-0729-47c4-b8df-0212ba6af851" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="02d8a951-e0a5-4c70-93c8-2c41ff429674" />
+              </controlFlow>
+              <controlFlow Id="15dd9c88-fdc0-4920-a6d9-35d23612f116" guard="Round not complete" isLeaf="false">
+                <opaqueActionMoniker Id="ad1bf420-6426-4514-87bb-923649365cb9" LastKnownName="Next Player" />
+                <elementDefinition Id="9c7577b8-cfb4-4a6f-b63c-0780346ff627" />
+              </controlFlow>
+              <controlFlow Id="8d0238d0-a05d-4f21-a484-c6f3bb8a8d6e" guard="Round complete" isLeaf="false">
+                <opaqueActionMoniker Id="92f4fb40-7805-4beb-839b-ac40fafb1901" LastKnownName="Next Round" />
+                <elementDefinition Id="29ae00c9-ac85-4a74-bcf3-8f3553382228" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="3bafa1b5-0729-47c4-b8df-0212ba6af851" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="fc997c2f-e19c-467b-a41e-8a00fd429d9e" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="42e7f41e-f0d2-4432-acc6-12668f5ff64f" name="Architecture">
+    <elementDefinition Id="7ac5e17f-5340-4318-bdfa-9bde4572109c" />
+  </package>
+</activityRootModel>

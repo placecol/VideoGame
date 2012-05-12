@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\PlaceRoad.cs" />
     <Compile Include="Commands\PlaceSettlement.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Game.cs" />

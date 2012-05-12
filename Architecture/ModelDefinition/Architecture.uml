@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+  dslVersion="1.0.0.0"
+  Id="7ac5e17f-5340-4318-bdfa-9bde4572109c"
+  name="Architecture" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="cf2304ef-d2c0-4fe2-a3eb-d0ab1f5b4ccd"
+        name="Create a Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="22108984-50ab-40eb-9685-80753b58075e"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8f1f30ac-e9a1-494d-9348-501bedd7fda3"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="15ee3d34-2a51-4226-ba6d-fb6a7c7e95ef"
+                  LastKnownName="User requests new Game"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <acceptEventAction
+            Id="15ee3d34-2a51-4226-ba6d-fb6a7c7e95ef"
+            name="User requests new Game"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7e0aab78-cd30-4d7e-8a51-aa74e178fc82"
+                isLeaf="false">
+                <callOperationActionMoniker
+                  Id="1e117249-c006-4ce1-8636-84582fb0935e"
+                  LastKnownName="Create lobby"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <callOperationAction
+            Id="1e117249-c006-4ce1-8636-84582fb0935e"
+            name="Create lobby"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2b8a3632-1cf4-4efd-828a-a8af3ed9026d"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="e11acd94-6fe0-4e9a-ba2b-fcc539e40f76"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callActionHasResults>
+                <outputPin
+                  Id="7785df9c-4ab6-4ab1-9abf-c697cfc2113a"
+                  name="Map"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="978449c4-e668-4b43-a411-14774a944bb5"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+            </pins>
+          </callOperationAction>
+          <acceptEventAction
+            Id="553416d8-fb04-482f-bdaa-0cd40e6baa74"
+            name="Wait for more users"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ec74d41b-175b-4e84-ad89-56234e7e1795"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="a53d9bf2-9f5b-44b8-8b1f-7857e1b3002e"
+                  LastKnownName="Join1"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <forkNode
+            Id="e11acd94-6fe0-4e9a-ba2b-fcc539e40f76"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c0f9bddc-c977-4eba-b964-e000b215786f"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="553416d8-fb04-482f-bdaa-0cd40e6baa74"
+                  LastKnownName="Wait for more users"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="955e94dd-3419-4521-ac12-647fd7dedb1e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="494d8285-0a1c-4406-9119-87f9384255d0"
+                  LastKnownName="Enter map details"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="494d8285-0a1c-4406-9119-87f9384255d0"
+            name="Enter map details"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f8fa53ea-df17-42c1-ac11-5e38c1f96e57"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="a53d9bf2-9f5b-44b8-8b1f-7857e1b3002e"
+                  LastKnownName="Join1"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="a53d9bf2-9f5b-44b8-8b1f-7857e1b3002e"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="79660f28-201f-4ae3-bea4-b57d77b03737"
+                isLeaf="false">
+                <callBehaviorActionMoniker
+                  Id="30218942-fd0c-404f-8467-fa2232f8feae"
+                  LastKnownName="Start Game"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <callBehaviorAction
+            Id="30218942-fd0c-404f-8467-fa2232f8feae"
+            name="Start Game"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7c2eeb7c-2504-40a9-88da-62c77fc26164"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5b003428-1681-4d89-9215-e80ce5c2a7b4"
+                  LastKnownName="Send Users back to lobby"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="65316217-1a24-47b5-a3c3-578f62480522"
+                  name="Map"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="d6e9c09a-558b-45f2-9eb3-f8109fc3fa2a"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin
+                  Id="1e1e5f13-05d8-4a0e-8300-76c3456eb669"
+                  name="Players"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="948aa36b-46a3-43a9-a732-ba0972782cba"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <callActionHasResults>
+                <outputPin
+                  Id="d69b6284-731b-4640-9f70-7f1f673b1777"
+                  name="Game Results"
+                  isLeaf="false"
+                  ordering="Unordered"
+                  isControlType="false"
+                  isControl="false">
+                  <upperBound>
+                    <literalInteger
+                      Id="458c1b68-ef63-41e2-aa7b-413789cc738d"
+                      name="2147483647"
+                      value="2147483647" />
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+            </pins>
+          </callBehaviorAction>
+          <opaqueAction
+            Id="5b003428-1681-4d89-9215-e80ce5c2a7b4"
+            name="Send Users back to lobby"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="69101b9f-ff75-4af6-972a-9ca9a4fb9e5b"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="97d39fdd-cca4-4592-84c4-1bcbad0c4e64"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="97d39fdd-cca4-4592-84c4-1bcbad0c4e64"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="8e8078eb-f76c-4032-bd5e-556f8b5313f4"
+        name="Game state machine"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="739243fe-153f-4929-918d-87cab0f3fe96"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e62b9fce-feb2-4544-a005-4027bb8fafe5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="be2667ed-a873-4318-9911-b59460cf4fee"
+                  LastKnownName="Setup Game"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="be2667ed-a873-4318-9911-b59460cf4fee"
+            name="Setup Game"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2b4a98fa-ae87-4ae2-b03e-ccdf93784dae"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="34ced649-aa88-46b7-a699-7315731ed909"
+                  LastKnownName="Next Round"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="34ced649-aa88-46b7-a699-7315731ed909"
+            name="Next Round"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7f713033-9a12-44c2-96b0-6e74955634ab"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e010eb25-55e8-45aa-83b7-13797fcc02fc"
+                  LastKnownName="Next Player"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="e010eb25-55e8-45aa-83b7-13797fcc02fc"
+            name="Next Player"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="cdac699a-ad02-41f8-8727-9a2d80b726be"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4fe0cdc5-6f65-4592-ace7-2d72742d86d0"
+                  LastKnownName="Start Turn"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="4fe0cdc5-6f65-4592-ace7-2d72742d86d0"
+            name="Start Turn"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="48978195-f510-4af3-b93c-c4e6b1467bc7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5c365490-6796-4f15-8497-014abc1611ab"
+                  LastKnownName="Get available player commands"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="5c365490-6796-4f15-8497-014abc1611ab"
+            name="Get available player commands"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4cfc65c1-e8f0-4cf1-b203-71f8fb5e823d"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="d63f99f8-cb0d-4210-8b31-f93a501eeb43"
+                  LastKnownName="Receive commands"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <acceptEventAction
+            Id="d63f99f8-cb0d-4210-8b31-f93a501eeb43"
+            name="Receive commands"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="25788bf4-47e0-481a-bf6a-e69f868705bf"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="03889986-ac34-42a3-a7c3-e5dab1ad3615"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <decisionNode
+            Id="03889986-ac34-42a3-a7c3-e5dab1ad3615"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7529db7e-9d9c-41ec-b341-723e6f73784a"
+                guard="Invalid command"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5c365490-6796-4f15-8497-014abc1611ab"
+                  LastKnownName="Get available player commands"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="02d8a951-e0a5-4c70-93c8-2c41ff429674"
+                guard="Winner"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="fc997c2f-e19c-467b-a41e-8a00fd429d9e"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="9c7577b8-cfb4-4a6f-b63c-0780346ff627"
+                guard="Round not complete"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e010eb25-55e8-45aa-83b7-13797fcc02fc"
+                  LastKnownName="Next Player"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="29ae00c9-ac85-4a74-bcf3-8f3553382228"
+                guard="Round complete"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="34ced649-aa88-46b7-a699-7315731ed909"
+                  LastKnownName="Next Round"
+                  LastKnownLocation="Architecture.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode
+            Id="fc997c2f-e19c-467b-a41e-8a00fd429d9e"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

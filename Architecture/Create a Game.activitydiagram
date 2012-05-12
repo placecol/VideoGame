@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="f2b0295b-ca07-4db4-8b6f-91a186a211c6" name="Create a Game" linkedPackageId="5e09fb62-6b7a-42f5-8a5c-aeb70c00e8d0" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="703c82fb-6a66-4e77-bdae-d94e9d332564" name="Create a Game" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="cf2304ef-d2c0-4fe2-a3eb-d0ab1f5b4ccd" />
+        <nodes>
+          <initialNode Id="07c5a4c1-26d6-4df2-8e70-d185f5565446" name="Initial1" isLeaf="false">
+            <elementDefinition Id="22108984-50ab-40eb-9685-80753b58075e" />
+            <flowNodeTargets>
+              <controlFlow Id="c27ede36-a023-4959-adca-52f45dae38ec" isLeaf="false">
+                <acceptEventActionMoniker Id="2d6a2ed2-d575-4862-8894-49b3ee050d65" LastKnownName="User requests new Game" />
+                <elementDefinition Id="8f1f30ac-e9a1-494d-9348-501bedd7fda3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <acceptEventAction Id="2d6a2ed2-d575-4862-8894-49b3ee050d65" name="User requests new Game" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="15ee3d34-2a51-4226-ba6d-fb6a7c7e95ef" />
+            <flowNodeTargets>
+              <controlFlow Id="f742a604-fe64-417d-b18c-7290a5919217" isLeaf="false">
+                <callOperationActionMoniker Id="b2d3a0b6-bc2c-448e-97f4-308a551572eb" LastKnownName="Create lobby" />
+                <elementDefinition Id="7e0aab78-cd30-4d7e-8a51-aa74e178fc82" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <callOperationAction Id="b2d3a0b6-bc2c-448e-97f4-308a551572eb" name="Create lobby" isLeaf="false">
+            <elementDefinition Id="1e117249-c006-4ce1-8636-84582fb0935e" />
+            <flowNodeTargets>
+              <controlFlow Id="2ed127c2-0244-4e55-a4e1-d8c84f621129" isLeaf="false">
+                <forkNodeMoniker Id="bc7f716f-5f6c-42a1-ba67-0fd470b4b10b" LastKnownName="Fork1" />
+                <elementDefinition Id="2b8a3632-1cf4-4efd-828a-a8af3ed9026d" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <callActionHasResults>
+                <outputPin Id="df60cea6-5e90-4a0a-8788-920d1b5686de" name="Map" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="7785df9c-4ab6-4ab1-9abf-c697cfc2113a" />
+                  <upperBound>
+                    <literalInteger Id="f7fd1f6e-2fab-475c-bb27-e63cceeaad14" name="2147483647" value="2147483647">
+                      <elementDefinition Id="978449c4-e668-4b43-a411-14774a944bb5" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+            </pins>
+          </callOperationAction>
+          <acceptEventAction Id="cb911f20-8367-4206-be8e-49c62a235968" name="Wait for more users" isLeaf="false" isUnmarshall="false">
+            <elementDefinition Id="553416d8-fb04-482f-bdaa-0cd40e6baa74" />
+            <flowNodeTargets>
+              <controlFlow Id="df20d9f3-3b87-45b2-a3dd-7eae0f6a5e0f" isLeaf="false">
+                <joinNodeMoniker Id="a69d1165-624b-4fd9-80e5-3a6413f71f2d" LastKnownName="Join1" />
+                <elementDefinition Id="ec74d41b-175b-4e84-ad89-56234e7e1795" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <forkNode Id="bc7f716f-5f6c-42a1-ba67-0fd470b4b10b" name="Fork1" isLeaf="false">
+            <elementDefinition Id="e11acd94-6fe0-4e9a-ba2b-fcc539e40f76" />
+            <flowNodeTargets>
+              <controlFlow Id="86ebaecd-003c-4b53-9cff-9a4b1d1375e7" isLeaf="false">
+                <acceptEventActionMoniker Id="cb911f20-8367-4206-be8e-49c62a235968" LastKnownName="Wait for more users" />
+                <elementDefinition Id="c0f9bddc-c977-4eba-b964-e000b215786f" />
+              </controlFlow>
+              <controlFlow Id="00a03078-fa1d-496f-aa4c-300fb563ff12" isLeaf="false">
+                <opaqueActionMoniker Id="efca4623-1348-4cd5-b386-98013d725fd3" LastKnownName="Enter map details" />
+                <elementDefinition Id="955e94dd-3419-4521-ac12-647fd7dedb1e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="efca4623-1348-4cd5-b386-98013d725fd3" name="Enter map details" isLeaf="false">
+            <elementDefinition Id="494d8285-0a1c-4406-9119-87f9384255d0" />
+            <flowNodeTargets>
+              <controlFlow Id="d437f998-0b1b-493a-ac08-44d19d6c2e3e" isLeaf="false">
+                <joinNodeMoniker Id="a69d1165-624b-4fd9-80e5-3a6413f71f2d" LastKnownName="Join1" />
+                <elementDefinition Id="f8fa53ea-df17-42c1-ac11-5e38c1f96e57" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="a69d1165-624b-4fd9-80e5-3a6413f71f2d" name="Join1" isLeaf="false">
+            <elementDefinition Id="a53d9bf2-9f5b-44b8-8b1f-7857e1b3002e" />
+            <flowNodeTargets>
+              <controlFlow Id="2bbd5292-b277-4e26-b24c-e387f6061e88" isLeaf="false">
+                <callBehaviorActionMoniker Id="2d2c1d63-0244-408e-b98d-f6c4926a4855" LastKnownName="Start Game" />
+                <elementDefinition Id="79660f28-201f-4ae3-bea4-b57d77b03737" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <callBehaviorAction Id="2d2c1d63-0244-408e-b98d-f6c4926a4855" name="Start Game" isLeaf="false">
+            <elementDefinition Id="30218942-fd0c-404f-8467-fa2232f8feae" />
+            <flowNodeTargets>
+              <controlFlow Id="30e8b550-43a1-4276-8b95-b7c3980e9d1f" isLeaf="false">
+                <opaqueActionMoniker Id="6f3cceac-d7b4-4a1f-8011-11416c4c2e2f" LastKnownName="Send Users back to lobby" />
+                <elementDefinition Id="7c2eeb7c-2504-40a9-88da-62c77fc26164" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <invocationActionHasArguments>
+                <inputPin Id="e4dfcc37-fc7d-4687-a9ff-dba5c9cfd122" name="Map" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="65316217-1a24-47b5-a3c3-578f62480522" />
+                  <upperBound>
+                    <literalInteger Id="d8a3f687-3a23-4cd6-a37d-8df41810faf9" name="2147483647" value="2147483647">
+                      <elementDefinition Id="d6e9c09a-558b-45f2-9eb3-f8109fc3fa2a" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <invocationActionHasArguments>
+                <inputPin Id="45cec5bd-397e-4651-968d-1362acf31a4f" name="Players" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="1e1e5f13-05d8-4a0e-8300-76c3456eb669" />
+                  <upperBound>
+                    <literalInteger Id="b86c2e1f-3f6f-4f01-b640-465208cdc3f7" name="2147483647" value="2147483647">
+                      <elementDefinition Id="948aa36b-46a3-43a9-a732-ba0972782cba" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </invocationActionHasArguments>
+              <callActionHasResults>
+                <outputPin Id="331a79f4-36c2-4a0e-9350-a33465f0c46e" name="Game Results" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="d69b6284-731b-4640-9f70-7f1f673b1777" />
+                  <upperBound>
+                    <literalInteger Id="147e9c86-988d-4cd2-8f83-49331ab55974" name="2147483647" value="2147483647">
+                      <elementDefinition Id="458c1b68-ef63-41e2-aa7b-413789cc738d" />
+                    </literalInteger>
+                  </upperBound>
+                </outputPin>
+              </callActionHasResults>
+            </pins>
+          </callBehaviorAction>
+          <opaqueAction Id="6f3cceac-d7b4-4a1f-8011-11416c4c2e2f" name="Send Users back to lobby" isLeaf="false">
+            <elementDefinition Id="5b003428-1681-4d89-9215-e80ce5c2a7b4" />
+            <flowNodeTargets>
+              <controlFlow Id="976d55d9-98ec-4153-bfc7-90de1afee001" isLeaf="false">
+                <activityFinalNodeMoniker Id="dc92914c-12a1-4ec8-b4d9-80dbf5c24cfc" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="69101b9f-ff75-4af6-972a-9ca9a4fb9e5b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="dc92914c-12a1-4ec8-b4d9-80dbf5c24cfc" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="97d39fdd-cca4-4592-84c4-1bcbad0c4e64" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="5e09fb62-6b7a-42f5-8a5c-aeb70c00e8d0" name="Architecture">
+    <elementDefinition Id="7ac5e17f-5340-4318-bdfa-9bde4572109c" />
+    <profileInstances>
+      <packageHasProfileInstances Id="df9545db-83c6-4ddf-a891-1194b6e9e631">
+        <profileInstance Id="ed922345-6a88-44d3-abcb-4738a67f4e0e" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a3af34f3-b45a-4ed9-9e39-155c4e97f9a1">
+        <profileInstance Id="6a1ce6aa-93f8-43b8-b876-9f50e298d076" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

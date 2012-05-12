@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Riddley.VideoGame.Model
 {
-    public class Node
+    public abstract class AbstractNode
     {
         private readonly Dictionary<Type, object> data = new Dictionary<Type, object>();
 
@@ -24,5 +24,15 @@ namespace Riddley.VideoGame.Model
         {
             data.Remove(typeof (T));
         }
+
+        public bool Has<T>()
+        {
+            return data.ContainsKey(typeof(T));
+        }
+    }
+
+    public class Node : AbstractNode
+    {
+        
     }
 }

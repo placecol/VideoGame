@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Riddley.VideoGame.Model.Commands;
 
 namespace Riddley.VideoGame.Model
 {

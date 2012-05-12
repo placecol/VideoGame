@@ -10,5 +10,9 @@ namespace Riddley.VideoGame.Model
         public List<Player> Players { get; set; }
 
         public Board Board { get; set; }
+
+        public bool SetupComplete { get; set; }
+
+        public Player CurrentPlayer { get; set; }
     }
 }

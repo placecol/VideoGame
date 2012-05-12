@@ -3,27 +3,18 @@ using System.Collections.Generic;
 
 namespace Riddley.VideoGame.Model
 {
-    public class Edge : Tuple<Node, Node> 
+    public class Edge : Node
     {
-        public Edge(Node item1, Node item2) : base(item1, item2)
+        private readonly Node item1;
+        private readonly Node item2;
+
+        public Edge(Node item1, Node item2)
         {
+            this.item1 = item1;
+            this.item2 = item2;
         }
 
-        private readonly Dictionary<Type, object> data = new Dictionary<Type, object>();
-
-        public void Add<T>(T obj)
-        {
-            data[typeof(T)] = obj;
-        }
-
-        public T Get<T>()
-        {
-            return (T)data[typeof(T)];
-        }
-
-        public void Remove<T>()
-        {
-            data.Remove(typeof(T));
-        }
+        public Node Item1 { get { return item1; } }
+        public Node Item2 { get { return item2; } }
     }
 }
